@@ -1,0 +1,148 @@
+.product
+    position: relative
+    background-color: var(--white-color)
+    margin-top: 10px
+    padding-bottom: 12px
+    display: block
+    text-decoration: none
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1)
+    border-radius: 2px
+    transition: transform ease-in 0.1s
+
+    &:hover
+        box-shadow: 0 1px 20px rgba(0, 0, 0, 0.05)
+        transform: translateY(-1px)
+
+    &__img
+        padding-top: 100%
+        background-size: contain
+        background-position: center
+        border-top-left-radius: 2px
+        border-top-right-radius: 2px
+
+    &__name
+        font-size: 1.4rem
+        font-weight: 400
+        color: var(--text-color)
+        line-height: 1.8rem
+        margin: 10px 10px 16px
+        height: 3.6rem
+        overflow: hidden
+        display: block
+        display: -webkit-box
+        -webkit-box-orient: vertical
+        -webkit-line-clamp: 2
+
+    &__price
+        display: flex
+        justify-content: left
+        margin: 0 10px
+
+    &__old-price
+        font-size: 1.4rem
+        text-decoration: line-through
+        color: #827575
+        margin-right: -6px
+
+    &__current-price
+        margin-left: 10px
+        font-size: 1.6rem
+        color: var(--primary-color)
+
+    &__action
+        display: flex
+        justify-content: space-between
+        margin: 12px 10px
+
+    &__like--liked
+        .product__like-normal
+            display: none
+        .product__like-clicked
+            display: inline-block
+
+    &__like
+        font-size: 1.2rem
+        color: #757575
+        cursor: pointer
+
+    &__like-clicked
+        color: #ff424f
+        display: none
+
+    &__rating
+        font-size: 0.8rem
+        color: #757575
+        margin-left: auto
+
+    &__sold
+        font-size: 1.2rem
+        margin-left: 4px
+        color: var(--text-color)
+        white-space: nowrap
+        text-overflow: ellipsis
+        overflow: hidden
+
+    &__origin
+        display: flex
+        justify-content: space-between
+        margin: 4px 10px 0
+        font-size: 1.2rem
+        color: #595959
+        font-weight: 300
+
+    &__favorite
+        position: absolute
+        color: var(--primary-color)
+        background: currentColor
+        font-size: 1.2rem
+        padding: 1px 4px
+        border-top-right-radius: 3px
+        border-bottom-right-radius: 3px
+        top: 10px
+        left: -4px
+
+        span
+            color: var(--white-color)
+
+        i
+            color: var(--white-color)
+            font-size: 1rem
+            margin: 0 1px
+
+        ::before
+            @include pseudo-common
+            border-left: 3px solid transparent
+            border-top: 3px solid currentColor
+            bottom: -3px
+            left: 0
+            filter: brightness(60%)
+
+    &__sale-off
+        position: absolute
+        top: 0
+        right: 0
+        width: 40px
+        height: 36px
+        background-color: rgba(255, 216, 64, 0.94)
+        text-align: center
+        font-size: 1.2rem
+        font-weight: 700
+        border-top-right-radius: 2px
+
+        &::before
+            @include pseudo-common
+            left: 0
+            bottom: -6px
+            width: 100%
+            border-width: 0 20px 6px 20px
+            border-style: solid
+            border-color: transparent rgba(255, 216, 64, 0.94) transparent rgba(255, 216, 64, 0.94)
+
+    &__sale-off-percent
+        display: block
+        color: #ee4d2d
+        margin-top: 2px
+
+    &__sale-off-label
+        color: var(--white-color)
+        text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5)

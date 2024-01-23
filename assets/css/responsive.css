@@ -1,0 +1,240 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes childGrow {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes grow {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+/* z-index */
+@media (max-width: 1023px) {
+  :root {
+    --header-height: 68px;
+    --navbar-height: 0;
+  }
+  .hide-on-tablet-mobile {
+    display: none;
+  }
+  .header {
+    position: fixed;
+    z-index: var(--header-layer);
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+  }
+  .sort-sm {
+    display: block;
+  }
+  .search {
+    margin: 0;
+  }
+  .search__left-side-icon {
+    display: flex;
+  }
+  .search__cart-list {
+    position: fixed;
+    top: var(--header-height);
+    width: 100%;
+    padding: 0 calc((100% - 664px) / 2);
+  }
+  .search__cart-list::before {
+    display: none;
+  }
+  .search__option-bar {
+    display: block;
+  }
+  .search__cart-icon-wrap {
+    position: relative;
+    display: inline-block;
+    padding: 0 12px;
+    cursor: pointer;
+  }
+  .search__cart-icon-wrap .search__cart-list {
+    display: none;
+  }
+  .search__cart-icon-wrap .search__cart-list.active {
+    display: block;
+  }
+  .main__container {
+    margin-top: calc(var(--header-height) + var(--header-sort-bar-height));
+  }
+  .main__content {
+    padding-top: 0;
+  }
+  .option-header {
+    position: relative;
+    z-index: var(--option-header-layer);
+    display: block;
+  }
+  .option-header__content {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    max-width: 100%;
+    background-color: var(--white-color);
+    transform: translateX(calc(-100% - 6px));
+    transition: transform 0.2s ease-in-out;
+  }
+  .option-header__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 2rem;
+    padding: 16px;
+  }
+  .option-header__list {
+    list-style: none;
+    margin: 0;
+    margin-top: 16px;
+    padding-left: 0;
+  }
+  .option-header__link {
+    padding: 16px 20px;
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+  }
+  .option-header__overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    transform: scale(0);
+  }
+  .option-header.active .option-header__content {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .option-header.active .option-header__overlay {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .product__like {
+    font-size: 1.6rem;
+  }
+  .product__rating {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 740px) and (max-width: 1023px) {
+  .hide-on-tablet {
+    display: none;
+  }
+  .search {
+    margin: 0;
+  }
+  .search__cart {
+    width: 80px;
+    text-align: right;
+  }
+  .search__option-bar {
+    margin-left: -10px;
+    margin-right: 8px;
+  }
+}
+@media (max-width: 739px) {
+  .hide-on-mobile {
+    display: none;
+  }
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .main {
+    overflow: hidden;
+  }
+  .main__content {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+  .search {
+    justify-content: space-between;
+  }
+  .search__option-bar {
+    display: block;
+  }
+  .search__logo {
+    max-width: 150px;
+  }
+  .search__logo-link {
+    text-align: center;
+  }
+  .search__logo-icon {
+    width: 120px;
+  }
+  .search__cart {
+    width: unset;
+    padding-right: 8px;
+  }
+  .search__cart-list {
+    right: 0;
+  }
+  .search__search-form-icon {
+    display: block;
+  }
+  .search__cart-product-price-wrap {
+    white-space: nowrap;
+  }
+  .search__cart-product-price {
+    font-size: 1.4rem;
+  }
+  .search__cart-close {
+    display: block;
+  }
+  .search-sm__form {
+    display: flex;
+  }
+  .product__action {
+    flex-wrap: wrap;
+    justify-content: right;
+  }
+  .pagination-item {
+    margin: 0 5px;
+  }
+  .pagination-item__link {
+    font-size: 1.6rem;
+    min-width: 24px;
+  }
+  .footer__top {
+    padding: 0 20px;
+  }
+  .footer__policy-link {
+    padding: 10px 25px;
+  }
+  .footer__text-copyright {
+    padding: 0 20px;
+    text-align: justify;
+  }
+  .footer__certi {
+    margin: 10px 20px;
+  }
+}
+
+/*# sourceMappingURL=responsive.css.map */

@@ -1,0 +1,25 @@
+@mixin pseudo-common
+    content: ''
+    position: absolute
+    display: block
+
+%set-display-block
+    display: block
+
+@mixin both-mobile-tablet
+    @media (max-width: 1023px)
+        @content
+
+@mixin tablet
+    @media (min-width: 740px) and (max-width: 1023px)
+        @content
+
+@mixin mobile
+    @media (max-width: 739px)
+        @content
+
+@mixin stretch-four-sides
+    left: 0
+    top: 0
+    bottom: 0
+    right: 0

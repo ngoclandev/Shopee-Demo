@@ -1,0 +1,177 @@
+%navbar__item-hover
+    color: rgba(255, 255, 255, 0.7)
+    cursor: pointer
+
+.header
+    height: var(--header-height)
+    background: linear-gradient(-180deg, #f53d2d, #f63)
+
+.navbar
+    display: flex
+    height: var(--navbar-height)
+    justify-content: space-between
+
+    &__list
+        list-style: none
+        padding-left: 0
+        margin: 8px 0
+        display: flex
+        font-size: 1.4rem
+
+    &__list > :nth-child(2)
+        &:hover
+            opacity: 1
+            cursor: auto
+
+    &__item
+        margin: 0 8px
+        position: relative
+        color: var(--white-color)
+        text-decoration: none
+        font-weight: 300
+
+    &__item-margin-icon
+        margin-left: 3px
+
+        &:hover
+            @extend %navbar__item-hover
+
+    &__item a
+        color: var(--white-color)
+        text-decoration: none
+        font-weight: 300
+
+        &:hover
+            @extend %navbar__item-hover
+
+    &__item b
+        font-weight: 500
+
+    &__item-user
+        position: relative
+        display: flex
+        align-items: center
+
+    &____item-user-img
+        width: 22px
+        height: 22px
+        border-radius: 50%
+        border: 1px solid rgba(0, 0, 0, 0.15)
+
+    &____item-user-name
+        font-size: 1.4rem
+        font-weight: 400
+        margin-left: 6px
+
+    &__item-user
+        &:hover .navbar__item-user-menu
+            @extend %set-display-block
+
+    &__item-user-menu
+        position: absolute
+        z-index: var(--user-menu-layer)
+        padding-left: 0
+        list-style: none
+        top: calc(100% + 8px)
+        right: 0
+        width: 160px
+        background: var(--white-color)
+        border-radius: 2px
+        box-shadow: 0 0 16px rgba(0, 0, 0, 0.1)
+        transform-origin: calc(100% - 32px) top
+        animation: childGrow ease-in 0.2s
+        display: none
+
+    &__item-user-menu
+        &::before
+            content: ""
+            position: absolute
+            border-style: solid
+            border-width: 8px 12px
+            border-color: transparent transparent var(--white-color) transparent
+            right: 26px
+            top: -14px
+
+        &::after
+            content: ""
+            position: absolute
+            top: -8px
+            right: 0
+            width: 65%
+            height: 16px
+
+    &__item-user-item--separate
+        border-top: 1px solid var(--border-color)
+
+    &__item-user-item
+        a
+            @extend %set-display-block
+            padding: 8px 16px
+            text-decoration: none
+            color: var(--text-color)
+            font-size: 1.4rem
+
+            &:first-child
+                border-top-left-radius: 2px
+                border-top-right-radius: 2px
+
+            &:last-child
+                border-bottom-left-radius: 2px
+                border-bottom-right-radius: 2px
+
+            &:hover
+                background-color: var(--background-hover-color)
+                color: var(--text-color)
+
+    &__item--separate
+        &::after
+            @include pseudo-common
+            width: 1px
+            height: 16px
+            background-color: #ff8e82
+            right: -10px
+            top: 50%
+            transform: translateY(-50%)
+
+    &__social-link
+        margin: 0 4px
+
+    &__qrcode
+        position: absolute
+        z-index: var(--qr-code-layer)
+        top: 150%
+        height: fit-content
+        width: 185px
+        border-radius: 2px
+        padding: 8px
+        background-color: var(--white-color)
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2)
+        cursor: default
+        display: none
+        animation: fadeIn ease-in 0.2s
+
+        ::before
+            @include pseudo-common
+            width: 100%
+            height: 16px
+            top: -12px
+            left: 0
+
+    &__qrcode-container.grid__row
+        justify-content: space-between
+        flex-direction: row-reverse
+        margin: 6px 11px
+
+    &__list > :nth-child(1)
+        &:hover .navbar__qrcode
+            @extend %set-display-block
+
+    &__qrcode-img
+        width: 100%
+
+    &__qrcode-link
+        height: 16px
+
+    &__item-notify
+        &:hover .notify
+            @extend %set-display-block

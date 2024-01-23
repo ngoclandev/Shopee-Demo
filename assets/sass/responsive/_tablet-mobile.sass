@@ -1,0 +1,117 @@
+@include both-mobile-tablet
+    :root
+        --header-height: 68px
+        --navbar-height: 0
+
+    .hide-on-tablet-mobile
+        display: none
+
+    .header
+        position: fixed
+        z-index: var(--header-layer)
+        top: 0
+        right: 0
+        left: 0
+        display: flex
+        align-items: center
+
+    .sort-sm
+        display: block
+
+    .search
+        margin: 0
+
+        &__left-side-icon
+            display: flex
+
+        &__cart-list
+            position: fixed
+            top: var(--header-height)
+            width: 100%
+            padding: 0 calc((100% - 664px) / 2)
+
+            &::before
+                display: none
+
+        &__option-bar
+            display: block
+
+        &__cart-icon-wrap
+            position: relative
+            display: inline-block
+            padding: 0 12px
+            cursor: pointer
+
+            .search__cart-list
+                display: none
+                &.active
+                    display: block
+
+    .main
+        &__container
+            margin-top: calc(var(--header-height) + var(--header-sort-bar-height))
+
+        &__content
+            padding-top: 0
+
+    .option-header
+        position: relative
+        z-index: var(--option-header-layer)
+        display: block
+
+        &__content
+            position: fixed
+            top: 0
+            bottom: 0
+            left: 0
+            width: 300px
+            max-width: 100%
+            background-color: var(--white-color)
+            transform: translateX(calc(-100% - 6px))
+            transition: transform .2s ease-in-out
+
+        &__close
+            position: absolute
+            right: 0
+            top: 0
+            font-size: 2rem
+            padding: 16px
+
+        &__list
+            list-style: none
+            margin: 0
+            margin-top: 16px
+            padding-left: 0
+
+        &__link
+            padding: 16px 20px
+            display: block
+            text-decoration: none
+            color: var(--text-color)
+            font-size: 1.4rem
+
+        &__overlay
+            position: fixed
+            @include stretch-four-sides
+            background-color: rgba(0, 0, 0, 0.3)
+            opacity: 0
+            transition: opacity .2s ease
+            transform: scale(0)
+
+        &.active
+
+            .option-header
+                &__content
+                    transform: translateX(0)
+                    opacity: 1
+
+                &__overlay
+                    opacity: 1
+                    transform: scale(1)
+
+    .product
+        &__like
+            font-size: 1.6rem
+
+        &__rating
+            font-size: 1rem

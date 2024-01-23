@@ -1,0 +1,92 @@
+.category
+    background-color: var(--white-color)
+
+    &__heading
+        font-size: 1.4rem
+        color: var(--text-color)
+        font-weight: 500
+        text-transform: uppercase
+        margin: 0
+        padding: 16px 16px 8px
+
+    .category-list
+        padding-left: 0
+        margin: 0
+        list-style: none
+
+    .category-item
+        position: relative
+
+        &__link
+            @extend %set-display-block
+            position: relative
+            right: 0
+            color: var(--text-color)
+            text-decoration: none
+            font-size: 1.3rem
+            padding: 8px 16px
+
+            &:hover
+                color: var(--primary-color)
+
+        &::before
+            content: ""
+            position: absolute
+            top: 0
+            left: 16px
+            right: 16px
+            border-top: 1px solid #e1e1e1
+
+        &:first-child
+            ::before
+                display: none
+
+    .category-item--active
+        .category-item__link
+            color: #d0011b
+
+.category-sm
+    padding: 18px 0 10px
+    &__list
+        display: flex
+        overflow-x: auto
+        list-style: none
+        padding-left: 0
+        text-align: center
+        margin: 0
+
+        &::-webkit-scrollbar
+            display: none
+
+    &__item
+        flex-shrink: 0
+        max-width: 110px
+        margin-right: 12px
+        border-radius: 2px
+
+        &:nth-of-type(3n + 1)
+            background: cadetblue
+
+        &:nth-of-type(3n + 2)
+            background: #2cb9db
+
+        &:nth-of-type(3n + 3)
+            background: #82cd45
+
+    &__link
+        --height: 2.2rem
+        display: block
+        display: -webkit-box
+        -webkit-box-orient: vertical
+        -webkit-line-clamp: 2
+        // white-space: nowrap
+        // text-overflow: ellipsis
+        overflow: hidden
+        line-height: var(--height)
+        height: calc(var(--height) * 2)
+        text-decoration: none
+        color: white
+        font:
+            size: 1.4rem
+            weight: 400
+        padding: 0 8px

@@ -1,0 +1,96 @@
+
+.notify
+    position: absolute
+    top: 150%
+    right: 0
+    background-color: var(--white-color)
+    width: 404px
+    border: 1px solid #ccc
+    border-radius: 4px
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.09)
+    display: none
+    transform-origin: calc(100% - 32px) top
+    animation: childGrow ease-in 0.2s
+    z-index: var(--notify-layer)
+
+    &::before
+        content: ""
+        position: absolute
+        border-style: solid
+        border-width: 8px 12px
+        border-color: transparent transparent var(--white-color) transparent
+        right: 26px
+        top: -16px
+
+    &::after
+        @include pseudo-common
+        width: 100%
+        height: 16px
+        top: -12px
+        left: 0
+
+    &:hover
+        cursor: auto
+
+    &__header
+        color: #888
+        margin-left: 12px
+        height: 40px
+
+        h3
+            font-weight: 400
+            font-size: 1.4rem
+            margin: 0
+            line-height: 40px
+            text-transform: capitalize
+
+    &__list
+        background-color: #fff2ee
+        padding: 0
+
+    &__item
+        padding: 12px
+
+        &:hover
+            background-color: var(--background-hover-color)
+
+            a
+                color: #888
+
+    &__item--viewed
+        background-color: var(--white-color)
+
+    a.notify__link
+        display: flex
+        color: #888
+        gap: 12px
+
+    img
+        width: 48px
+        object-fit: contain
+
+    &__info span
+        @extend %set-display-block
+        line-height: 1.6
+
+    &__title
+        font-size: 1.4rem
+        line-height: 1.8rem
+        font-weight: 400
+        color: var(--text-color)
+        text-transform: uppercase
+        margin-bottom: 2px
+
+    &__description
+        font-size: 1.2rem
+
+    &__btn
+        height: 40px
+
+        a.notify__see-all-btn
+            @extend %set-display-block
+            color: #000
+            font-weight: 400
+            line-height: 40px
+            font-size: 1.4rem
+            text-align: center
